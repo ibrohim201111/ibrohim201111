@@ -1,12 +1,14 @@
-- 👋 Hi, I’m @ibrohim201111
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
+from aiogram import Bot, Dispatcher, types
+from aiogram.utils import executor
 
-<!---
-ibrohim201111/ibrohim201111 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+TOKEN = "7558470396:AAHHA48hH_1BaIYm861dxHa6EQaQD3ZAUGg"  # Tokenni o'z botingdan ol
+
+bot = Bot(token=TOKEN)
+dp = Dispatcher(bot)
+
+@dp.message_handler(commands=['start'])
+async def start_command(message: types.Message):
+    await message.reply("Salom! Men ishlayapman!")
+
+if name == 'main':
+    executor.start_polling(dp, skip_updates=True)
